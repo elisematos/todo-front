@@ -8,20 +8,23 @@ import { ListComponent } from './list/list.component';
 import { ItemComponent } from './item/item.component';
 import {CommonModule} from "@angular/common";
 import {ListService} from "./shared/services/list.service";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { CreateListComponent } from './create-list/create-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     ItemComponent,
+    CreateListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ListService],
   bootstrap: [AppComponent]

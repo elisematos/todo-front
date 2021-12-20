@@ -1,5 +1,5 @@
-<h1>list works!</h1>
-
+<h1>To-do list application</h1>
+<button (click)="newList()">Ajouter une liste</button>
 <ul>
   <li *ngFor="let list of lists" (load)="getLists()">{{ list.title }}</li>
 </ul>

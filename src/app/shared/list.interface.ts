@@ -1,9 +1,11 @@
 export interface ListInterface {
-  title:string;
+  id: String;
+  title:String;
   itemsDto: ItemInterface[];
 }
 
 export interface ItemInterface {
-  name:string;
+  id:String;
+  name:String;
   done:boolean;
 }

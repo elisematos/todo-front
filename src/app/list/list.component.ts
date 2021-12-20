@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ListInterface} from "../shared/list.interface";
 import {ListService} from "../shared/services/list.service";
 import {List} from "../shared/models/list.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-list',
@@ -11,10 +12,14 @@ import {List} from "../shared/models/list.model";
 export class ListComponent implements OnInit {
 
   lists: List[]=[];
-  constructor(readonly listService: ListService) { }
+  constructor(readonly listService: ListService, private router: Router) { }
 
   ngOnInit(): void {
     this.getLists()
+  }
+
+  newList() {
+    this.router.navigateByUrl('list/new');
   }
 
   getLists() {
