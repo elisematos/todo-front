@@ -1,1 +1,6 @@
-<p>list-new works!</p>
+<div>
+  <label> Nouvelle liste : </label>
+  <input id="title" type="text" [formControl]="title">
+  <button (click)="createList()">Créer</button>
+</div>
+
