@@ -1,7 +1,7 @@
 import {ListInterface, ItemInterface} from "../list.interface";
 
 export class List {
-  id?: String;
+  id?: number;
   title?:String;
   items?: Item[] = [];
 
@@ -14,7 +14,7 @@ export class List {
 }
 
 export class Item {
-  id?:String;
+  id?:number;
   name?:String;
   done?:boolean;
 

@@ -2,7 +2,6 @@
 <button (click)="newList()">Ajouter une liste</button>
 
 <ul>
-  <li *ngFor="let list of lists">
-    <a [routerLink]="['/list-details', list.id]">{{ list.title }}</a>
-  </li>
+  <li *ngFor="let list of lists" style="list-style: none">
+    <a [routerLink]="['/list-details', list.id]">{{ list.title }}</a></li>
 </ul>

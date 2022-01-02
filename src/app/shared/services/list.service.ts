@@ -2,7 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ListInterface} from "../list.interface";
-import {List} from "../models/list.model";
+import {Item, List} from "../models/list.model";
+import { HttpHeaders } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +25,10 @@ export class ListService {
 
   fetchListById(permaLink: Number): Observable<ListInterface> {
     return this.http.get<ListInterface>(this.baseURL + permaLink)
+  }
+
+  changeCheck(id:number): Observable<any> {
+    return this.http.patch<any>(this.baseURL + "items/" + id, null);
   }
 
 }

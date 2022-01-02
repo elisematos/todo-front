@@ -1,7 +1,7 @@
 <h1>{{ list.title }}</h1>
 <hr>
 <div *ngFor="let item of list.items">
-  <input type="checkbox" id="item" name="item" [checked]="item.done">
+  <input type="checkbox" id="item" name="item" [checked]="item.done" (click)="changeCheck(item.id)">
   <label for="item">{{ item.name }}</label>
 </div>
 

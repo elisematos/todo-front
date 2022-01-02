@@ -26,11 +26,20 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         },(err: any) => {
           console.log('Failure response')
         }
-      )
+      );
     });
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+
+  changeCheck(id: any) {
+    this.listService.changeCheck(id).subscribe(() => {
+        console.log('helloworld');
+      },(err: any) => {
+        console.log('Failure response')
+      }
+    );
   }
 }
