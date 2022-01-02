@@ -5,10 +5,10 @@ import {Item, List} from "../shared/models/list.model";
 
 @Component({
   selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+  templateUrl: './list-details.component.html',
+  styleUrls: ['./list-details.component.css']
 })
-export class ItemComponent implements OnInit {
+export class ListDetailsComponent implements OnInit {
   list: List | undefined;
   items: Item[] = [];
   permaLink: Number = 0;

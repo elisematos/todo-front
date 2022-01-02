@@ -5,18 +5,20 @@ import { HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
-import { ItemComponent } from './item/item.component';
+import { ListDetailsComponent } from './list-details/list-details.component';
 import {CommonModule} from "@angular/common";
 import {ListService} from "./shared/services/list.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { CreateListComponent } from './create-list/create-list.component';
+import { ListNewComponent } from './list-new/list-new.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    ItemComponent,
-    CreateListComponent,
+    ListDetailsComponent,
+    ListNewComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

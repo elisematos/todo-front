@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {ListComponent} from "./list/list.component";
-import {ItemComponent} from "./item/item.component";
-import {CreateListComponent} from "./create-list/create-list.component";
+import {ListDetailsComponent} from "./list-details/list-details.component";
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
 const routes: Routes = [
+  { path: '',   redirectTo: '/list', pathMatch: 'full' },
   {path:'list', component:ListComponent},
-  {path:'list/new', component: CreateListComponent},
-  {path:'list/:id', component: ItemComponent},
+  {path:'list/:id', component: ListDetailsComponent},
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
