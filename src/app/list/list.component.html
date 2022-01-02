@@ -1,5 +1,8 @@
 <h1>To-do list application</h1>
 <button (click)="newList()">Ajouter une liste</button>
+
 <ul>
-  <li *ngFor="let list of lists" (load)="getLists()">{{ list.title }}</li>
+  <li *ngFor="let list of lists">
+    <a [routerLink]="['/list-details', list.id]">{{ list.title }}</a>
+  </li>
 </ul>

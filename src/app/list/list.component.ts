@@ -26,6 +26,7 @@ export class ListComponent implements OnInit {
     this.listService.fetchLists().subscribe(
       (data:ListInterface[]) => {
         data.forEach(l => {
+          console.log(l);
           this.lists.push(new List(l));
         })
       },
