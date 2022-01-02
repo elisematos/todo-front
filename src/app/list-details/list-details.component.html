@@ -1,6 +1,7 @@
 <h1>{{ list.title }}</h1>
 <hr>
-<ul>
-  <li *ngFor="let item of list.items">{{ item.name }}</li>
-</ul>
+<div *ngFor="let item of list.items">
+  <input type="checkbox" id="item" name="item" [checked]="item.done">
+  <label for="item">{{ item.name }}</label>
+</div>
 
