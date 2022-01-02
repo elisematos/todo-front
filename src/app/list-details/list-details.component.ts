@@ -30,10 +30,6 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
-
   changeCheck(id: any) {
     this.listService.changeCheck(id).subscribe(() => {
         console.log('helloworld');
@@ -41,5 +37,9 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         console.log('Failure response')
       }
     );
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 }

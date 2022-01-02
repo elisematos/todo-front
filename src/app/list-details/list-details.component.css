@@ -1,0 +1,4 @@
+input[type="checkbox"]:checked+span {
+  text-decoration: line-through;
+  color: dimgray;
+}
