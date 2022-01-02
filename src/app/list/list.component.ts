@@ -33,10 +33,10 @@ export class ListComponent implements OnInit {
   createList() {
     // @ts-ignore
     this.newList.title = this.addListForm.get('title').value;
-    this.listService
-      .addList(this.newList)
-      .subscribe(list => {
-          this.lists.push(list);
+    this.listService.addList(this.newList)
+      .subscribe(() => {
+          this.lists = [];
+          this.getLists();
         }
       );
   }
