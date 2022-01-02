@@ -3,7 +3,6 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ListInterface} from "../list.interface";
 import {Item, List} from "../models/list.model";
-import { HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -19,6 +18,10 @@ export class ListService {
     return this.http.post<ListInterface>(this.baseURL, list);
   }
 
+  addItem(id: any, item: Item): Observable<any> {
+    return this.http.post<ListInterface>(this.baseURL + id, item)
+  }
+
   fetchLists(): Observable<ListInterface[]> {
     return this.http.get<ListInterface[]>(this.baseURL);
   }
@@ -30,5 +33,4 @@ export class ListService {
   changeCheck(id:number): Observable<any> {
     return this.http.patch<any>(this.baseURL + "items/" + id, null);
   }
-
 }

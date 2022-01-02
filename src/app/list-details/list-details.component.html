@@ -1,7 +1,10 @@
 <h1>{{ list.title }}</h1>
 <hr>
+<label> Nouvelle tache : </label>
+<input id="name" type="text" [formControl]="name">
+<button (click)="createItem()">Nouvelle tache</button>
 <div *ngFor="let item of list.items">
-  <input type="checkbox"[checked]="item.done" (click)="changeCheck(item.id)">
+  <input type="checkbox" [checked]="item.done" (click)="changeCheck(item.id)">
   <span>{{ item.name }}</span>
 </div>
 

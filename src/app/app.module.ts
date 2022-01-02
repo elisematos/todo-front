@@ -9,7 +9,6 @@ import { ListDetailsComponent } from './list-details/list-details.component';
 import {CommonModule} from "@angular/common";
 import {ListService} from "./shared/services/list.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { ListNewComponent } from './list-new/list-new.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppComponent,
     ListComponent,
     ListDetailsComponent,
-    ListNewComponent,
     PageNotFoundComponent,
   ],
   imports: [

@@ -1,5 +1,10 @@
 <h1>To-do list application</h1>
-<button (click)="newList()">Ajouter une liste</button>
+
+<div>
+  <label> Nouvelle liste : </label>
+  <input id="title" type="text" [formControl]="title">
+  <button (click)="createList()">Créer</button>
+</div>
 
 <ul>
   <li *ngFor="let list of lists" style="list-style: none">
