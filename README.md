@@ -1,4 +1,4 @@
-# TodoFront
+# Todo list library manager in Angular 13
 
 You can find the API here : https://github.com/elisematos/todolist
 
