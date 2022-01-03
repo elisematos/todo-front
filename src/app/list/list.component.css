@@ -4,7 +4,7 @@ form {
 }
 
 mat-nav-list {
-  display: inline-block;
+  display: inline-flex;
   flex-direction: column-reverse;
 }
 

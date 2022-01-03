@@ -5,6 +5,9 @@
     <mat-form-field>
       <mat-label>Nouvelle liste</mat-label>
       <input matInput id="title" type="text" [formControl]="title">
+      <mat-error *ngIf="title.hasError('required')">
+        Attribuer un nom
+      </mat-error>
     </mat-form-field>
     <button mat-icon-button (click)="createList()">
       <mat-icon>add</mat-icon>

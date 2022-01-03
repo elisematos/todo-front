@@ -12,7 +12,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class ListComponent implements OnInit {
 
   addListForm: FormGroup;
-  title = new FormControl('', Validators.required)
+  title = new FormControl('', [Validators.required])
   lists: List[]=[];
   newList: List;
 
