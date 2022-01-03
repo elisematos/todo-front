@@ -32,10 +32,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.sub = this.activatedRoute.params.subscribe(params => {
       let id = +params['id'];
-      this.listService.fetchListById(id).subscribe((data: ListInterface) => {
-          this.list = new List(data);
-        }
-      );
+      this.findItems(id);
     });
   }
 
@@ -47,16 +44,32 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
     // @ts-ignore
     this.newItem.name = this.addItemForm.get('name').value;
     this.listService.addItem( this.list.id, this.newItem,).subscribe(item => {
+      console.log(item);
           // @ts-ignore
         this.list.items.push(item);
         }
       );
   }
 
+  findItems(id:any) {
+    this.listService.fetchListById(id).subscribe((data: ListInterface) => {
+        this.list = new List(data);
+      }
+    );
+  }
+
   deleteList() {
     this.listService.deleteList(this.list.id).subscribe();
     this.router.navigateByUrl('/');
   }
+
+  deleteItem(id:any) {
+    console.log(id);
+    this.listService.deleteItem(this.list.id, id).subscribe(
+      () => this.findItems(this.list.id)
+    );
+  }
+
 
   ngOnDestroy() {
     this.sub.unsubscribe();

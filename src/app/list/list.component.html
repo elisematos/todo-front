@@ -16,9 +16,6 @@
   <mat-nav-list class="col">
     <mat-list-item *ngFor="let list of lists">
       <a mat-line [routerLink]="['/list-details', list.id]"><span>{{ list.title }}</span></a>
-      <button mat-icon-button color="warn">
-        <mat-icon>delete</mat-icon>
-      </button>
     </mat-list-item>
   </mat-nav-list>
 </mat-card>

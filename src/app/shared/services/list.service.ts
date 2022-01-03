@@ -38,7 +38,7 @@ export class ListService {
     return this.http.delete(this.baseURL + id);
   }
 
-  deleteItem(idList:number, idItem:number): Observable<unknown> {
+  deleteItem(idList: number | undefined, idItem: number): Observable<unknown> {
     return this.http.delete(this.baseURL + idList + "/items/" + idItem)
   }
 
