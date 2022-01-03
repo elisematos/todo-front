@@ -44,11 +44,17 @@ export class ListComponent implements OnInit {
   getLists() {
     this.listService.fetchLists().subscribe(
       (data:ListInterface[]) => {
+        this.lists = [];
         data.forEach(l => {
-          console.log(l);
           this.lists.push(new List(l));
         })
       }
+    )
+  }
+
+  deleteList(id: any) {
+    this.listService.deleteList(id).subscribe(
+      () => this.getLists()
     )
   }
 }

@@ -1,11 +1,4 @@
-<div>
-  <h1>{{ list.title }}</h1>
-  <button mat-icon-button color="warn" (click)="deleteList()">
-    <mat-icon>delete</mat-icon>
-  </button>
-</div>
-
-
+<h1>{{ list.title }}</h1>
 <hr>
 <label> Nouvelle tache : </label>
 <input id="name" type="text" [formControl]="name">
@@ -13,7 +6,6 @@
 <div *ngFor="let item of list.items">
   <input type="checkbox" [checked]="item.done" (click)="changeCheck(item.id)">
   <span>{{ item.name }}</span>
-  <p>{{item.id}}</p>
   <button (click)="deleteItem(item.id)">Effacer</button>
 </div>
 

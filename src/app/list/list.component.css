@@ -1,1 +1,10 @@
+.lists {
+  display: flex;
+  flex-direction: column-reverse;
+}
 
+mat-card {
+  display: inline-flex;
+  align-items: baseline;
+  row-gap: 30px;
+}

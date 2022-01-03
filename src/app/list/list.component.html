@@ -1,7 +1,6 @@
-<div class="container">
-<mat-card class="row">
-  <h1 class="col">Mes listes de taches</h1>
-  <form class="col">
+<section>
+  <h1>Mes listes de taches</h1>
+  <form>
     <mat-form-field>
       <mat-label>Nouvelle liste</mat-label>
       <input matInput id="title" type="text" [formControl]="title">
@@ -13,10 +12,10 @@
       <mat-icon>add</mat-icon>
     </button>
   </form>
-  <mat-nav-list class="col">
-    <mat-list-item *ngFor="let list of lists">
-      <a mat-line [routerLink]="['/list-details', list.id]"><span>{{ list.title }}</span></a>
-    </mat-list-item>
-  </mat-nav-list>
+</section>
+<div class="lists">
+<mat-card *ngFor="let list of lists">
+  <a class="items" mat-line [routerLink]="['/list-details', list.id]">{{ list.title }}</a>
+  <button class="items" mat-mini-fab color="warn" (click)="deleteList(list.id)"><mat-icon>delete</mat-icon></button>
 </mat-card>
 </div>
