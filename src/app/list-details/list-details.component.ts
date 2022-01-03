@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ListService} from "../shared/services/list.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Item, List} from "../shared/models/list.model";
 import {ListInterface} from "../shared/list.interface";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
@@ -20,7 +20,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
   newItem: Item;
   private sub: any;
 
-  constructor(readonly listService: ListService, private activatedRoute: ActivatedRoute) {
+  constructor(readonly listService: ListService, private activatedRoute: ActivatedRoute, private router: Router) {
     this.addItemForm = new  FormGroup({
       name: this.name
     })
@@ -40,7 +40,7 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
   }
 
   changeCheck(id: any) {
-    this.listService.changeCheck(id)
+    this.listService.changeCheck(id).subscribe();
   }
 
   createItem() {
@@ -51,6 +51,11 @@ export class ListDetailsComponent implements OnInit, OnDestroy {
         this.list.items.push(item);
         }
       );
+  }
+
+  deleteList() {
+    this.listService.deleteList(this.list.id).subscribe();
+    this.router.navigateByUrl('/');
   }
 
   ngOnDestroy() {

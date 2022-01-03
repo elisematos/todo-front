@@ -1,7 +1,7 @@
-<div>
-<mat-card>
-  <h1>To-do list application</h1>
-  <form>
+<div class="container">
+<mat-card class="row">
+  <h1 class="col">Mes listes de taches</h1>
+  <form class="col">
     <mat-form-field>
       <mat-label>Nouvelle liste</mat-label>
       <input matInput id="title" type="text" [formControl]="title">
@@ -13,10 +13,10 @@
       <mat-icon>add</mat-icon>
     </button>
   </form>
-  <mat-nav-list>
+  <mat-nav-list class="col">
     <mat-list-item *ngFor="let list of lists">
       <a mat-line [routerLink]="['/list-details', list.id]"><span>{{ list.title }}</span></a>
-      <button mat-icon-button>
+      <button mat-icon-button color="warn">
         <mat-icon>delete</mat-icon>
       </button>
     </mat-list-item>

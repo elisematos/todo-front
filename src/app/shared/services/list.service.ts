@@ -33,4 +33,13 @@ export class ListService {
   changeCheck(id:number): Observable<any> {
     return this.http.patch<any>(this.baseURL + "items/" + id, null);
   }
+
+  deleteList(id: number | undefined): Observable<unknown>{
+    return this.http.delete(this.baseURL + id);
+  }
+
+  deleteItem(idList:number, idItem:number): Observable<unknown> {
+    return this.http.delete(this.baseURL + idList + "/items/" + idItem)
+  }
+
 }
