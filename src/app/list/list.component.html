@@ -1,13 +1,22 @@
-<h1>To-do list application</h1>
-
 <div>
-  <label> Nouvelle liste : </label>
-  <input id="title" type="text" [formControl]="title">
-  <button (click)="createList()">Créer</button>
+<mat-card>
+  <h1>To-do list application</h1>
+  <form>
+    <mat-form-field>
+      <mat-label>Nouvelle liste</mat-label>
+      <input matInput id="title" type="text" [formControl]="title">
+    </mat-form-field>
+    <button mat-icon-button (click)="createList()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </form>
+  <mat-nav-list>
+    <mat-list-item *ngFor="let list of lists">
+      <a mat-line [routerLink]="['/list-details', list.id]"><span>{{ list.title }}</span></a>
+      <button mat-icon-button>
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-nav-list>
+</mat-card>
 </div>
-
-<ul>
-  <li *ngFor="let list of lists" style="list-style: none">
-    <a [routerLink]="['/list-details', list.id]">{{ list.title }}</a>
-  </li>
-</ul>
