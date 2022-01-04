@@ -1,10 +1,15 @@
-.lists {
-  display: flex;
-  flex-direction: column-reverse;
+header {
+  text-align: center;
 }
 
 mat-card {
-  display: inline-flex;
-  align-items: baseline;
-  row-gap: 30px;
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto 0 auto;
+}
+
+mat-nav-list {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: stretch;
 }
