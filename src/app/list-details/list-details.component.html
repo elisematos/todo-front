@@ -10,14 +10,13 @@
     <mat-icon>add</mat-icon>
   </button>
 </header>
-
 <mat-card>
   <mat-list>
     <mat-list-item *ngFor="let item of list.items">
       <mat-checkbox [checked]="item.done != null ? item.done : false " (click)="changeCheck(item.id)">
         <span>{{ item.name }}</span>
       </mat-checkbox>
-      // TODO align button to the right
+<!--      TODO align button to the right-->
       <button class="button-end" mat-mini-fab color="warn" aria-label="delete item" (click)="deleteItem(item.id)">
         <mat-icon>cancel</mat-icon>
       </button>

@@ -16,11 +16,14 @@ mat-card {
 mat-list {
   display: flex;
   flex-direction: column-reverse;
+  align-items: stretch;
 }
 
-.mat-list-item-content {
+mat-list-item {
   display: flex;
-  justify-content: stretch;
+}
+.button-end {
+  margin-left: auto;
 }
 
 
