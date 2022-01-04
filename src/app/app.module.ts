@@ -19,6 +19,8 @@ import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {RouterModule} from "@angular/router";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    NgbModule
+    NgbModule,
+    RouterModule,
+    MatCheckboxModule
   ],
   providers: [ListService],
   bootstrap: [AppComponent]

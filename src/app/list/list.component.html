@@ -14,9 +14,9 @@
 <mat-card *ngIf="lists.length > 0">
   <mat-nav-list >
     <mat-list-item *ngFor="let list of lists">
-      <a class="items" mat-line [routerLink]="['/list-details', list.id]">{{ list.title }}</a>
-      <button class="items" mat-mini-fab color="warn" (click)="deleteList(list.id)">
-        <mat-icon>delete</mat-icon>
+      <a mat-line [routerLink]="['/list-details', list.id]">{{ list.title }}</a>
+      <button mat-mini-fab color="warn" aria-label="delete list" (click)="deleteList(list.id)">
+        <mat-icon>cancel</mat-icon>
       </button>
     </mat-list-item>
   </mat-nav-list>

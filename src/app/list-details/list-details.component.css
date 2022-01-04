@@ -1,4 +1,26 @@
+header {
+  text-align: center;
+}
+
 input[type="checkbox"]:checked+span {
   text-decoration: line-through;
   color: dimgray;
 }
+
+mat-card {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto 0 auto;
+}
+
+mat-list {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.mat-list-item-content {
+  display: flex;
+  justify-content: stretch;
+}
+
+

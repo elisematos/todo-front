@@ -1,11 +1,27 @@
-<h1>{{ list.title }}</h1>
-<hr>
-<label> Nouvelle tache : </label>
-<input id="name" type="text" [formControl]="name">
-<button (click)="createItem()">Nouvelle tache</button>
-<div *ngFor="let item of list.items">
-  <input type="checkbox" [checked]="item.done" (click)="changeCheck(item.id)">
-  <span>{{ item.name }}</span>
-  <button (click)="deleteItem(item.id)">Effacer</button>
-</div>
+<header>
+  <h1>{{ list.title }}</h1>
+  <mat-form-field>
+    <input matInput placeholder="Nouvelle tache" id="name" type="text" [formControl]="name" #newtaskinput>
+    <mat-error *ngIf="name.hasError('required')">
+      Attribuer un nom
+    </mat-error>
+  </mat-form-field>
+  <button [disabled]="newtaskinput.value == ''" mat-raised-button color="primary" (click)="createItem(); newtaskinput.value = ''">
+    <mat-icon>add</mat-icon>
+  </button>
+</header>
+
+<mat-card>
+  <mat-list>
+    <mat-list-item *ngFor="let item of list.items">
+      <mat-checkbox [checked]="item.done != null ? item.done : false " (click)="changeCheck(item.id)">
+        <span>{{ item.name }}</span>
+      </mat-checkbox>
+      // TODO align button to the right
+      <button class="button-end" mat-mini-fab color="warn" aria-label="delete item" (click)="deleteItem(item.id)">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
 
