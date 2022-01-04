@@ -1,5 +1,5 @@
 <header>
-  <h1>Mes listes de taches</h1>
+  <h1>Mes listes</h1>
   <mat-form-field>
     <input matInput placeholder="Nouvelle liste" id="title" type="text" [formControl]="title" #newlistinput>
     <mat-error *ngIf="title.hasError('required')">
@@ -12,7 +12,7 @@
 </header>
 
 <mat-card *ngIf="lists.length > 0">
-  <mat-nav-list >
+  <mat-nav-list>
     <mat-list-item *ngFor="let list of lists">
       <a mat-line [routerLink]="['/list-details', list.id]">{{ list.title }}</a>
       <button mat-mini-fab color="warn" aria-label="delete list" (click)="deleteList(list.id)">

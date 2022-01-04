@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ListInterface} from "../list.interface";
 import {Item, List} from "../models/list.model";
+import {environment} from "../../../environments/environment";
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import {Item, List} from "../models/list.model";
 })
 export class ListService {
 
-  baseURL:string ='http://localhost:8080/v1/lists/'
+  baseURL = environment.baseUrl
 
   constructor(private http: HttpClient) { }
 
